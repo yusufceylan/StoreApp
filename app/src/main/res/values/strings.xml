@@ -5,4 +5,12 @@
     <string name="api_exception_technical_error">Teknik aksaklıktan dolayı şuanda hizmet veremiyoruz, lütfen daha sonra
         tekrar deneyiniz.
     </string>
+
+    <string name="user_name">Kullanıcı Adı</string>
+    <string name="password">Şifre</string>
+    <string name="login">Giriş</string>
+    <string name="remember_me">Beni hatırla</string>
+
+    <string name="error_empty_fields">Lütfen gerekli alanları doldurunuz</string>
+    <string name="error_validation">Kullanıcı adı ya da yanlış</string>
 </resources>

@@ -51,4 +51,18 @@ class AppHelper constructor(private val context: Context, val sharedHelper: Shar
         return context
     }
 
+    /**
+     * Get remember me status of user
+     */
+    fun getRememberStatus() : Boolean {
+        return sharedHelper.getBooleanData(REMEMBER_ME, false)
+    }
+
+    /**
+     * Set remember me status of user
+     */
+    fun setRememberStatus(rememberMe : Boolean) {
+        sharedHelper.putBooleanData(REMEMBER_ME, rememberMe)
+    }
+
 }
