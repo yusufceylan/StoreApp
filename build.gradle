@@ -43,4 +43,6 @@ ext {
     // Rx Java - Rx Android
     rxandroid = '2.1.1'
     rxjava = '2.2.10'
+    // Timber
+    timber = '4.7.1'
 }

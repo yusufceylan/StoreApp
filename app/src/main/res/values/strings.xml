@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Marketim</string>
+
+    <string name="api_exception_unknown">Bilinmeyen bir sorun oluştu. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="api_exception_technical_error">Teknik aksaklıktan dolayı şuanda hizmet veremiyoruz, lütfen daha sonra
+        tekrar deneyiniz.
+    </string>
 </resources>

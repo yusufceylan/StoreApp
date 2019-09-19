@@ -77,4 +77,8 @@ dependencies {
     // Rx
     implementation "io.reactivex.rxjava2:rxjava:${rxjava}"
     implementation "io.reactivex.rxjava2:rxandroid:${rxandroid}"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:${timber}"
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 }
