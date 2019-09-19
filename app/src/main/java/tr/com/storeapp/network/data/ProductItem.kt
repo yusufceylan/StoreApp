@@ -17,5 +17,14 @@ data class ProductItem(
     @SerializedName("productPrice")
     val productPrice: Double?,
     @SerializedName("productState")
-    val productState: String?
-)
+    val productState: String?,
+
+    @Transient
+    var isSelected: Boolean
+) {
+    companion object {
+        val CONFIRMED = "Yolda"
+        val PREPARING = "Hazırlanıyor"
+        val WAITING = "Onay Bekliyor"
+    }
+}

@@ -1,5 +1,7 @@
 package tr.com.storeapp.ui.product
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import timber.log.Timber
@@ -13,6 +15,9 @@ class ProductListActivityViewModel @Inject constructor(private val compositeDisp
                                                        private val productListUseCase: ProductListUseCase) :
     BaseViewModel(compositeDisposable) {
 
+
+    private val productList : MutableLiveData<MutableList<ProductItem>> = MutableLiveData()
+
     init {
         Timber.d("$this is ready")
         fetchProductList()
@@ -21,7 +26,7 @@ class ProductListActivityViewModel @Inject constructor(private val compositeDisp
     /**
      * Fetch product list from service
      */
-    fun fetchProductList() {
+    private fun fetchProductList() {
 
         setNetworkStatus(NetworkState.LOADING)
 
@@ -30,6 +35,7 @@ class ProductListActivityViewModel @Inject constructor(private val compositeDisp
 
                 setNetworkStatus(NetworkState.LOADED)
                 Timber.d("Result --> $t")
+                productList.value = t
             }
 
             override fun onError(e: Throwable) {
@@ -44,5 +50,12 @@ class ProductListActivityViewModel @Inject constructor(private val compositeDisp
 
         compositeDisposable.add(disposable)
 
+    }
+
+    /**
+     * Returns product list as live data
+     */
+    fun getProductList() : LiveData<MutableList<ProductItem>> {
+        return productList
     }
 }

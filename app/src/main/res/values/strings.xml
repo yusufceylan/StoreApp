@@ -13,4 +13,6 @@
 
     <string name="error_empty_fields">Lütfen gerekli alanları doldurunuz</string>
     <string name="error_validation">Kullanıcı adı ya da yanlış</string>
+
+    <string name="okay">Tamam</string>
 </resources>
