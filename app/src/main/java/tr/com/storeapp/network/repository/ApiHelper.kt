@@ -5,6 +5,7 @@ import retrofit2.Response
 import tr.com.storeapp.R
 import tr.com.storeapp.network.core.ApiException
 import tr.com.storeapp.network.ApiService
+import tr.com.storeapp.network.data.ProductItem
 import tr.com.storeapp.utils.AppHelper
 
 /**
@@ -13,7 +14,7 @@ import tr.com.storeapp.utils.AppHelper
 class ApiHelper constructor(private val apiService: ApiService, private val appHelper: AppHelper) : ApiRepository {
 
 
-    override fun fetchProductList(params: HashMap<String, Any>?): Single<Any> {
+    override fun fetchProductList(params: HashMap<String, Any>?): Single<MutableList<ProductItem>> {
         return apiService.fetchProductList().flatMap { this.interceptError(it) }
     }
 
