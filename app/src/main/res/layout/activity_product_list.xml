@@ -25,7 +25,53 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toTopOf="@+id/llButtonsWrapper"/>
+
+        <LinearLayout
+                android:id="@+id/llButtonsWrapper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOrders"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_8"
+                    android:text="@string/my_orders"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="14sp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@android:color/holo_red_dark"
+                    app:backgroundTint="@android:color/white"
+                    app:cornerRadius="@dimen/dimen_4"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_8"
+                    android:onClick="onButtonClick"/>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_8"
+                    android:text="@string/logout"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:backgroundTint="@android:color/holo_red_dark"
+                    app:cornerRadius="@dimen/dimen_4"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:onClick="onButtonClick"/>
+
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

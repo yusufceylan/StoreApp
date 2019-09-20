@@ -8,11 +8,13 @@ import timber.log.Timber
 import tr.com.storeapp.base.BaseViewModel
 import tr.com.storeapp.network.core.ApiException
 import tr.com.storeapp.network.data.ProductItem
+import tr.com.storeapp.utils.AppHelper
 import tr.com.storeapp.utils.NetworkState
 import javax.inject.Inject
 
 class ProductListActivityViewModel @Inject constructor(private val compositeDisposable: CompositeDisposable,
-                                                       private val productListUseCase: ProductListUseCase) :
+                                                       private val productListUseCase: ProductListUseCase,
+                                                       val appHelper: AppHelper) :
     BaseViewModel(compositeDisposable) {
 
 
