@@ -3,7 +3,6 @@ package tr.com.storeapp.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import tr.com.storeapp.BR
@@ -11,6 +10,8 @@ import tr.com.storeapp.R
 import tr.com.storeapp.base.BaseActivity
 import tr.com.storeapp.databinding.ActivityMainBinding
 import tr.com.storeapp.ui.product.ProductListActivity
+import tr.com.storeapp.utils.extension.positiveButton
+import tr.com.storeapp.utils.extension.showAlertDialog
 import tr.com.storeapp.utils.extension.startActivityFromRight
 import kotlin.reflect.KClass
 
@@ -45,10 +46,16 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
      */
     private fun checkFields(username: String, password: String): Boolean {
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(applicationContext, R.string.error_empty_fields, Toast.LENGTH_SHORT).show()
+            showAlertDialog {
+                setMessage(getString(R.string.error_empty_fields))
+                positiveButton(getString(R.string.okay))
+            }
             return false
         } else if (username != "kariyer" || password != "2019ADev") {
-            Toast.makeText(applicationContext, R.string.error_validation, Toast.LENGTH_SHORT).show()
+            showAlertDialog {
+                setMessage(getString(R.string.error_validation))
+                positiveButton(getString(R.string.okay))
+            }
             return false
         }
         return true
@@ -59,13 +66,13 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
      */
     fun onButtonClick(view : View?) {
         when(view?.id) {
-            R.id.btn_login -> {
+            R.id.btnLogin -> {
 
-                val username = field_username.text.toString().trim()
-                val password = field_password.text.toString().trim()
+                val username = tieUsername.text.toString().trim()
+                val password = tiePassword.text.toString().trim()
 
                 if (checkFields(username, password)) {
-                    getViewModel().appHelper.setRememberStatus(switch_remember.isChecked)
+                    getViewModel().appHelper.setRememberStatus(scRemember.isChecked)
                     startActivityFromRight(Intent(this, ProductListActivity::class.java))
                     finish()
                 }

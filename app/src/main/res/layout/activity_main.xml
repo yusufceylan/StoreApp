@@ -50,7 +50,7 @@
                     app:boxCornerRadiusTopStart="@dimen/dimen_4">
 
                 <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/field_username"
+                        android:id="@+id/tieUsername"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
@@ -74,7 +74,7 @@
                     app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/field_password"
+                        android:id="@+id/tiePassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
@@ -84,7 +84,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/switch_remember"
+                    android:id="@+id/scRemember"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/remember_me"
@@ -93,7 +93,7 @@
                     android:layout_marginTop="@dimen/dimen_8"/>
 
             <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_login"
+                    android:id="@+id/btnLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_16"
